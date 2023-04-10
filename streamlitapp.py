@@ -11,12 +11,12 @@ streamlit.header("Breakfast Favourites")
 streamlit.text("🥣 Omega 3 & Blueberry Oatmeal")
 streamlit.text("🥗 Kale, Spinach & Rocket Smoothie")
 streamlit.text("🐔 Hard-Boiled Free-Range Egg")
-streamlit.text("🥑🍞 Avaoado Toast")
+streamlit.text("🥑🍞 Avocado Toast")
 
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
 # Let's put a pick list here so they can pick the fruit they want to include 
-fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
+fruits_selected = streamlit.multiselect("What fruit would you like information about?", list(my_fruit_list.index))
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 # Display the table on the page.
@@ -37,3 +37,7 @@ my_cur.execute("SELECT * from fruit_load_list")
 my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_rows)
+
+# Allow the end user to add a fruit to the list
+add_my_fruit = streamlit.multiselect("What fruit would you like to add?", list(my_fruit_list.index))
+streamlit.text('Thanks for adding', add_my_fruit)
