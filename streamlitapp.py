@@ -1,5 +1,5 @@
 import pandas
-import streamlit
+import streamlit st
 
 
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
@@ -40,4 +40,5 @@ streamlit.dataframe(my_data_rows)
 
 # Allow the end user to add a fruit to the list
 add_my_fruit = streamlit.multiselect("What fruit would you like to add?", list(fruits_selected))
-streamlit.text('Thanks for adding ', st.write(add_my_fruit))
+streamlit.text('Thanks for adding ') 
+st.write(add_my_fruit))
