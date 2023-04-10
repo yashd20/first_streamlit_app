@@ -39,5 +39,5 @@ streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_rows)
 
 # Allow the end user to add a fruit to the list
-add_my_fruit = streamlit.multiselect("What fruit would you like to add?", list(my_fruit_list.index))
-streamlit.text('Thanks for adding', my_fruit_list.loc[add_my_fruit])
+add_my_fruit = streamlit.multiselect("What fruit would you like to add?", list(fruits_to_show))
+streamlit.text('Thanks for adding', list(add_my_fruit.index))
